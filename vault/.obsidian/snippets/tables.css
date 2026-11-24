@@ -1,0 +1,22 @@
+/* Tables: let long file paths and URLs wrap instead of squeezing the other columns,
+   and keep the first two columns (name, purpose) readable.
+   Applies in Reading view and Live Preview. */
+.markdown-preview-view td,
+.markdown-source-view td {
+  overflow-wrap: anywhere;
+}
+.markdown-preview-view td code,
+.markdown-source-view td code,
+.markdown-preview-view td a,
+.markdown-source-view td a {
+  white-space: normal;
+  word-break: break-all;
+}
+.markdown-preview-view td:nth-child(1),
+.markdown-source-view td:nth-child(1) {
+  min-width: 14ch;
+}
+.markdown-preview-view td:nth-child(2),
+.markdown-source-view td:nth-child(2) {
+  min-width: 18ch;
+}

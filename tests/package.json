@@ -1,0 +1,14 @@
+{
+  "name": "obsidian-notes-template-tests",
+  "description": "Runs the vault's Templater templates against a mock of Obsidian",
+  "scripts": {
+    "test": "node run-all.js",
+    "showcase": "node build-showcase.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "js-yaml": "^5.5.0",
+    "moment": "^2.31.0"
+  },
+  "private": true
+}

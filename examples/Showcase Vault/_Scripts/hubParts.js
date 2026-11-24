@@ -1,0 +1,244 @@
+// Templater user script: tp.user.hubParts({ name, cats, kind, faq, deliverables })
+// Builds the shared pieces of project / operations hub notes so both stay consistent.
+function hubParts({ name, cats, kind, faq, deliverables = false }) {
+  const F = "```";
+  const today = window.moment().format("YYYY-MM-DD");
+  const props = [
+    "---", "type: project", `kind: ${kind}`, "category:", ...cats.map(c => `  - "[[${c}]]"`),
+    "status: active",
+    "repo: []",
+    ...(kind === "operations" ? [] : ["next_action: "]),
+    `started: ${today}`, "---",
+    `# ${name}`,
+    ...(faq ? [`❓ [[${name} - FAQ|FAQ]]`] : []),
+  ].join("\n");
+
+  const waiting = `## ⏳ Waiting on
+${F}tasks
+not done
+tags include #waiting
+path includes {{query.file.folder}}
+sort by due
+short mode
+${F}
+*Quick Capture → "Waiting on", or write \`- [ ] #waiting <thing> from [[Person]] 📅 <follow-up date>\` in the Tasks note.*`;
+
+  const deliverablesTable = `## 📅 Deliverables schedule
+| Deliverable | Recipient | Frequency | Runbook |
+| ----------- | --------- | --------- | ------- |
+|             |           |           |         |`;
+
+  const reference = `## ⚠️ Things to be aware of
+- 
+
+## ✅ Decisions
+*Format: \`- YYYY-MM-DD — decision — why\`.*
+- 
+
+## 💻 Helpful commands
+*Quick Capture → Helpful command, or paste a code block here.*
+- 
+
+## 📄 Relevant documents
+*Quick Capture → Document. Location = file path, share/SharePoint path, or URL.*
+
+| Document | What it is / why it's useful | Location |
+| -------- | ---------------------------- | -------- |
+|          |                              |          |
+
+## 🌐 Useful links
+*Quick Capture → Link.*
+
+| Link | What it is / why it's useful | URL |
+| ---- | ---------------------------- | --- |
+|      |                              |     |
+
+## 🖥️ Environments
+| What | Where |
+| ---- | ----- |
+| Dev  |       |
+| Prod |       |
+| Repo |       |
+
+## 👥 People
+- `;
+
+  const issues = `## 🐞 Open issues
+${F}base
+filters:
+  and:
+    - type == "issue"
+    - project == this
+views:
+  - type: table
+    name: Open
+    filters:
+      and:
+        - 'status != "fixed"'
+    order:
+      - file.name
+      - note.status
+      - note.severity
+      - note.notify
+      - note.found
+    sort:
+      - property: note.found
+        direction: DESC
+  - type: table
+    name: All
+    order:
+      - file.name
+      - note.status
+      - note.severity
+      - note.found
+      - note.fixed
+${F}`;
+
+  const meetings = `## 🗓️ Meetings
+${F}base
+filters:
+  and:
+    - type == "meeting"
+    - project == this
+views:
+  - type: table
+    name: Upcoming
+    filters:
+      and:
+        - date >= today()
+    order:
+      - file.name
+      - note.date
+      - note.time
+      - note.attendees
+    sort:
+      - property: note.date
+        direction: ASC
+  - type: table
+    name: Past
+    filters:
+      and:
+        - date < today()
+    order:
+      - file.name
+      - note.date
+      - note.attendees
+    sort:
+      - property: note.date
+        direction: DESC
+${F}`;
+
+  const runbooks = `## 📘 Runbooks
+*How to do each routine job. Ctrl+P → Templater: Create _Templates/Runbook.md*
+${F}base
+filters:
+  and:
+    - type == "runbook"
+    - project == this
+views:
+  - type: table
+    name: Runbooks
+    order:
+      - file.name
+      - note.frequency
+      - note.last_run
+${F}`;
+
+  const notes = `## 📝 Notes
+${F}base
+filters:
+  and:
+    - project == this
+    - or:
+        - type == "note"
+${kind === "operations" ? "" : '        - type == "runbook"\n'}views:
+  - type: table
+    name: Notes
+    order:
+      - file.name
+      - note.type
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+${F}`;
+
+  const related = `## 📚 Related knowledge
+*Knowledge Base runbooks/write-ups whose \`related\` property includes this note.*
+${F}base
+filters:
+  and:
+    - list(related).contains(this)
+views:
+  - type: table
+    name: Related knowledge
+    order:
+      - file.name
+      - note.type
+      - note.topic
+      - note.last_reviewed
+${F}`;
+
+  const git = `## 🧾 Git
+*Add repo URL(s) to the \`repo\` property (use a /tree/<branch>/<folder> URL to limit to a folder), then
+Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with \`🌿 branch-name\` in the task.*
+<!-- git:start -->
+<!-- git:end -->`;
+
+  const requirements = `## 📐 Requirements
+*New: Ctrl+P → \`Templater: Create _Templates/Requirement.md\`. Changed: \`Templater: Insert _Templates/Change Requirement.md\`
+(run it from the meeting where it changed to link the meeting + attendees). Each requirement keeps its own version history.*
+${F}base
+filters:
+  and:
+    - type == "requirement"
+    - project == this
+views:
+  - type: table
+    name: Active
+    filters:
+      and:
+        - 'status != "dropped"'
+        - 'status != "deferred"'
+    order:
+      - note.req_id
+      - file.name
+      - note.status
+      - note.priority
+      - note.version
+      - note.added
+      - note.last_changed
+    sort:
+      - property: note.req_id
+        direction: ASC
+  - type: table
+    name: Changed in last 30 days
+    filters:
+      and:
+        - last_changed >= today() - "30d"
+    order:
+      - note.req_id
+      - file.name
+      - note.status
+      - note.version
+      - note.last_changed
+      - note.meetings
+    sort:
+      - property: note.last_changed
+        direction: DESC
+  - type: table
+    name: All (incl. deferred/dropped)
+    groupBy:
+      property: note.status
+      direction: ASC
+    order:
+      - note.req_id
+      - file.name
+      - note.priority
+      - note.version
+      - note.added
+${F}`;
+
+  return { props, requirements, git, related, waiting, deliverablesTable, reference, issues, meetings, runbooks, notes, F };
+}
+module.exports = hubParts;

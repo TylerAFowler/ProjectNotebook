@@ -1,0 +1,7 @@
+/* Notes with `cssclasses: [hide-done]` hide completed/cancelled tasks in Reading view.
+   Switch to Editing view (Ctrl/Cmd+E) to see the full history. */
+.hide-done.markdown-preview-view li.task-list-item[data-task="x"],
+.hide-done.markdown-preview-view li.task-list-item[data-task="X"],
+.hide-done.markdown-preview-view li.task-list-item[data-task="-"] {
+  display: none;
+}
