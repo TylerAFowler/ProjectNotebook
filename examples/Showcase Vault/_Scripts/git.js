@@ -277,7 +277,7 @@ async function git(tp, action, opts = {}) {
       for (const { c, b } of mine) lines.push(`- [[${hub.basename}]] [\`${c.sha.slice(0, 7)}\`](${c.html_url}) ${firstLine(c.commit.message)} (\`${b}\`)`);
     }
     return [
-      `*Your commits on ${day.format("YYYY-MM-DD")} · refreshed ${m().format("HH:mm")} · Ctrl+P → Refresh Git to update*`,
+      `*Your commits on ${day.format("YYYY-MM-DD")} · refreshed ${m().format("HH:mm")} · press Refresh Git to update*`,
       ...(lines.length ? lines : ["- (none yet)"]),
       ...errors.map(e => `- ⚠️ ${e}`),
     ].join("\n");

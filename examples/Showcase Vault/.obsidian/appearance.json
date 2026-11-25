@@ -2,6 +2,8 @@
   "enabledCssSnippets": [
     "hide-done",
     "tables",
-    "sticky"
-  ]
+    "task-status"
+  ],
+  "showRibbon": true,
+  "theme": "obsidian"
 }

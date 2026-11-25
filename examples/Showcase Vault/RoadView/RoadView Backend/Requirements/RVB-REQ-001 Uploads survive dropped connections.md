@@ -15,6 +15,9 @@ people:
   - "[[Jordan Ellis]]"
 ---
 # RVB-REQ-001: Uploads survive dropped connections
+```actions
+change-requirement
+```
 **Project:** [[RoadView Backend]] · **Added:** 2026-11-09 in [[2026-11-09 Upload reliability review]] · **From:** [[Sam Okafor]], [[Rita Gomez]], [[Jordan Ellis]]
 
 ## Current requirement
@@ -27,7 +30,7 @@ A clip upload interrupted by a lost connection resumes from the last confirmed p
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

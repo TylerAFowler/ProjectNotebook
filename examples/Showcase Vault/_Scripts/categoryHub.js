@@ -8,6 +8,9 @@ type: category
 created: ${today}
 ---
 # ${cat}
+\`\`\`actions
+new-project new-operations
+\`\`\`
 
 ## ⚙️ Operations (ongoing work)
 ${F}base

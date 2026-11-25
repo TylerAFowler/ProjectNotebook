@@ -9,6 +9,9 @@ repo:
 started: 2026-11-24
 ---
 # Cloud Platform Operations
+```actions
+quick-capture new-meeting new-issue new-runbook refresh-git
+```
 
 > [!info] Ongoing work for [[Cloud Platform]]: recurring jobs, requests and how-tos. Projects are listed on the category page.
 
@@ -61,7 +64,7 @@ short mode
 ```
 
 ## 📘 Runbooks
-*How to do each routine job. Ctrl+P → Templater: Create _Templates/Runbook.md*
+*How to do each routine job. New: the **Runbook** button above (or Ctrl+P → Project Notes: New runbook).*
 ```base
 filters:
   and:
@@ -77,8 +80,8 @@ views:
 ```
 
 ## 🧾 Git
-*Add repo URL(s) to the `repo` property (use a /tree/<branch>/<folder> URL to limit to a folder), then
-Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with `🌿 branch-name` in the task.*
+*Add repo URL(s) to the `repo` property (use a `/tree/branch/folder` URL to limit to a folder), then
+press **Refresh Git** above. Link a task to a branch with `🌿 branch-name` in the task.*
 <!-- git:start -->
 *Refreshed 2026-11-24 16:00*
 

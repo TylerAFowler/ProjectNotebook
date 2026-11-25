@@ -1,15 +1,15 @@
 <%*
 try {
-// Run with "Templater: Insert Quick Capture" from ANY note (bind a hotkey, e.g. Ctrl+Shift+T).
+// Run with "Project Notes: Quick capture" from ANY note (or its button / hotkey).
 // It inserts nothing where your cursor is; it appends to the chosen project instead.
 const kind = await tp.system.suggester(
-  ["📌 Sticky to-do (no project)", "✅ Task (one-off or recurring)", "📬 Request from someone", "⏳ Waiting on someone", "✅ Decision", "⚠️ Thing to be aware of", "💻 Helpful command", "❓ FAQ entry", "📄 Document", "🌐 Link", "📅 Deliverable (schedule)"],
-  ["sticky", "task", "request", "waiting", "decision", "aware", "command", "faq", "doc", "link", "deliverable"], false, "Capture what?");
+  ["✅ Task (one-off or recurring)", "📬 Request from someone", "⏳ Waiting on someone", "✅ Decision", "⚠️ Thing to be aware of", "💻 Helpful command", "❓ FAQ entry", "📄 Document", "🌐 Link", "📅 Deliverable (schedule)"],
+  ["task", "request", "waiting", "decision", "aware", "command", "faq", "doc", "link", "deliverable"], false, "Capture what?");
 if (!kind) throw new Error("Cancelled.");
 const act = tp.config.active_file;
 const actType = act ? tp.app.metadataCache.getFileCache(act)?.frontmatter?.type : null;
 const thisNote = (kind === "doc" || kind === "link") && (actType === "runbook" || actType === "writeup");
-const proj = kind === "sticky" ? null : await tp.user.pickProject(tp, kind === "doc" || kind === "link",
+const proj = await tp.user.pickProject(tp, kind === "doc" || kind === "link",
   thisNote ? [{ label: `📘 This note: ${act.basename}`, value: "__this__" }] : []);
 const onThis = proj === "__this__";
 const general = proj === "__general__";
@@ -17,7 +17,7 @@ const ask = async (q, def = "") => { const a = (await tp.system.prompt(q, def))?
 const text = await ask(
   kind === "faq" ? "Question" :
   kind === "waiting" ? "What are you waiting on, and from whom? (e.g. schema approval from [[Jane Doe]])" :
-  kind === "sticky" ? "To-do" : kind === "doc" ? "Document name" : kind === "link" ? "Link name" :
+  kind === "doc" ? "Document name" : kind === "link" ? "Link name" :
   kind === "request" ? "What was requested?" : kind === "deliverable" ? "Deliverable (e.g. Monthly FHWA crash extract)" : "Text");
 const today = tp.date.now("YYYY-MM-DD");
 const vlt = tp.app;
@@ -57,12 +57,7 @@ const addToSection = async (file, headingWord, line, newSection = null) => {
   });
 };
 
-if (kind === "sticky") {
-  const sticky = vlt.vault.getAbstractFileByPath("📌 Sticky.md");
-  if (!sticky) throw new Error('Can\'t find "📌 Sticky.md" at the top of the vault.');
-  const due = (await tp.system.prompt("Due date (YYYY-MM-DD, blank for none)", ""))?.trim();
-  await addToSection(sticky, "To do", `- [ ] ${text}${due ? ` 📅 ${due}` : ""} ➕ ${today}`);
-} else if (kind === "task" || kind === "waiting" || kind === "request") {
+if (kind === "task" || kind === "waiting" || kind === "request") {
   const tasksFile = vlt.vault.getAbstractFileByPath(`${proj.parent.path}/${proj.basename} - Tasks.md`) ?? proj;
   if (kind === "request") {
     const who = peopleMarks(await tp.system.prompt("Who asked / is waiting on it? (names, comma-separated)", ""));
@@ -121,7 +116,7 @@ if (kind === "sticky") {
 } else {
   await addToSection(proj, "commands", `- \`${text}\``);
 }
-new tp.obsidian.Notice(`Added to ${kind === "sticky" ? "📌 Sticky" : onThis ? act.basename : general ? "General Docs & Links" : proj.basename}`);
+new tp.obsidian.Notice(`Added to ${onThis ? act.basename : general ? "General Docs & Links" : proj.basename}`);
 } catch (e) {
   // Show any failure in the note itself and in a 15-second notice.
   console.error("Template error", e);

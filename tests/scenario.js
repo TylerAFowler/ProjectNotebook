@@ -43,8 +43,6 @@ const pickFirst = (_ph, labels, values) => values[0];
   await QC(["link", "Staging dashboard", "Check row counts after each load", "https://dashboards.example.gov/crash-staging"]);
   await QC(["doc", "Oracle naming standards", "Table/column naming rules all new schemas must follow", "\\\\fileserver\\IT\\Standards\\Oracle_Naming.pdf", "Oracle"], pickGeneral);
   await QC(["link", "Service desk portal", "Where to open access requests and server tickets", "https://servicedesk.example.gov", ""], pickGeneral);
-  await run("Quick Capture", ["sticky", "Call Bob back about the extract", "2026-11-24"], { target: "scratch.md", active: P });
-  await run("Quick Capture", ["sticky", "Order new monitor", ""], { target: "scratch.md", active: P });
   await run("Daily Note", [], { target: "Daily/2026-11-23.md" });
   await run("Daily Note", [], { target: "Daily/2026-11-24.md" });
   await module.exports.fill();

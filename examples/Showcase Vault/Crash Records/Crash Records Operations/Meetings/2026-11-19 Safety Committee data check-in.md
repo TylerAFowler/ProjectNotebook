@@ -8,6 +8,9 @@ attendees:
   - "[[Dana Whitfield]]"
 ---
 # Safety Committee data check-in
+```actions
+quick-capture new-requirement change-requirement
+```
 **Project:** [[Crash Records Operations]] · **Date:** 2026-11-19 13:00
 
 ## Prep / questions to ask
@@ -26,7 +29,7 @@ attendees:
 - 2026-11-19 — Preliminary 2025 numbers are OK for the committee packet if labelled preliminary — final numbers come after the staging sign-off
 
 ## 📐 Requirements discussed
-*New requirement: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed one: `Templater: Insert _Templates/Change Requirement.md`. Run either from this note and it's linked here automatically.*
+*New requirement / changed one: the buttons at the top. Run either from this note and it's linked here automatically.*
 ```base
 filters:
   and:

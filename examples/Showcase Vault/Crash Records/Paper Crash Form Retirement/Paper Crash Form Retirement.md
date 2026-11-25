@@ -9,6 +9,9 @@ next_action:
 started: 2026-06-01
 ---
 # Paper Crash Form Retirement
+```actions
+quick-capture new-meeting new-issue new-note new-requirement refresh-git
+```
 
 > [!tip] 🧭 Where I left off
 > *Update this every time you switch away.*
@@ -36,7 +39,7 @@ short mode
 ```
 
 ## 📐 Requirements
-*New: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed: `Templater: Insert _Templates/Change Requirement.md`
+*New: the **Requirement** button above. Changed: open the requirement (or the meeting where it changed) and press **Change requirement**
 (run it from the meeting where it changed to link the meeting + attendees). Each requirement keeps its own version history.*
 ```base
 filters:
@@ -90,8 +93,8 @@ views:
 ```
 
 ## 🧾 Git
-*Add repo URL(s) to the `repo` property (use a /tree/<branch>/<folder> URL to limit to a folder), then
-Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with `🌿 branch-name` in the task.*
+*Add repo URL(s) to the `repo` property (use a `/tree/branch/folder` URL to limit to a folder), then
+press **Refresh Git** above. Link a task to a branch with `🌿 branch-name` in the task.*
 <!-- git:start -->
 <!-- git:end -->
 

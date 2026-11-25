@@ -17,6 +17,9 @@ people:
   - '[[Kevin O''Hara]]'
 ---
 # CDL-REQ-001: County codes validated
+```actions
+change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Added:** 2026-11-04 in [[2026-11-04 2025 load kickoff]] · **From:** [[Marcus Bell]], [[Priya Natarajan]]
 
 ## Current requirement
@@ -30,7 +33,7 @@ Every record's county code must match the state county list, or be a valid FIPS 
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

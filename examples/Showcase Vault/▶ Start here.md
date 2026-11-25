@@ -1,5 +1,10 @@
 # ▶ Start here: a 15-minute tour
 
+> [!tip] Prefer learning by doing?
+> Do the four **Tutorials**: [[Tutorial 1 - Capture a task]] → [[Tutorial 2 - Finish, cancel or reopen a task]] →
+> [[Tutorial 3 - Run a meeting]] → [[Tutorial 4 - Weekly review]]. The buttons at the top of pages do everything;
+> the ☰ icon in the left ribbon lists every action.
+
 This vault belongs to a fictional developer, **Alex Rivera**, on a transportation agency's IT team.
 Everything in it was made with the vault's own templates. All people, systems and URLs are invented.
 
@@ -19,7 +24,7 @@ Everything in it was made with the vault's own templates. All people, systems an
   gotchas, decisions, commands, documents, links, environments, people, issues, meetings and notes.
 - The **🧾 Git** section shows the branch linked to the in-progress task (`🌿 feature/county-validation`): how far ahead it is and its commits.
 - **❓ FAQ** under the title holds answers you give other people over and over.
-- Open [[2025 Crash Data Load - Tasks]]. Reading view hides finished tasks; press **Ctrl+E** to see the full history.
+- Open [[2025 Crash Data Load - Tasks]]. Reading view hides finished tasks; open **📜 History** at the bottom to see them.
 
 ## 3. Requirements with history: [[CDL-REQ-001 County codes validated]]
 - The **Version history** table shows each change: what changed, why, in which meeting, and who asked.
@@ -48,15 +53,12 @@ Everything in it was made with the vault's own templates. All people, systems an
 - [[Commands and hotkeys]] lists every command, with a column to record your own hotkeys.
 - [[General Docs & Links]] holds pointers that aren't tied to a project.
 
-## 9. 📌 Sticky
-- Open [[📌 Sticky]], right-click its tab → **Open in new window**, shrink it and park it beside your other windows.
-
-## 10. Try it live
+## 9. Try it live
 | Try | How | Watch |
 | --- | --- | ----- |
-| Capture a task | On a hub, **Quick Capture** → Task. Add a due date, `🎯 FY2027 Q3`, a branch and a person | It appears in the hub's Open tasks, on Home, and on the person's page |
+| Capture a task | On a hub, press **Quick capture** → Task. Add a due date, `🎯 FY2027 Q3`, a branch and a person | It appears in the hub's Open tasks, on Home, and on the person's page |
 | Request from someone | Quick Capture → Request | Shows under *📬 Open requests* on an operations hub |
-| New meeting | Create **Meeting**, pick a project, a future date, attendees | *Upcoming meetings* on Home and on the hub |
-| Change a requirement | Open a meeting, then Insert **Change Requirement** | A new version row linked to that meeting and its attendees |
-| Fix an issue | Set an issue's `status: fixed` and `fixed:` to a date this week, then create **Weekly Report** → This week | It appears under 🔧 Issues fixed and 📣 Let people know |
-| Refresh Git | Needs the demo repo pushed to GitHub (see the repo README), then **Ctrl+Shift+G** on a hub | The 🧾 Git section updates from GitHub |
+| New meeting | Press **Meeting** on Home, pick a project, a future date, attendees | *Upcoming meetings* on Home and on the hub |
+| Change a requirement | Open a meeting, press **Change requirement** | A new version row linked to that meeting and its attendees |
+| Fix an issue | Set an issue's `status: fixed` and `fixed:` to a date this week, then press **Weekly review** → This week | It appears under 🔧 Issues fixed and 📣 Let people know |
+| Refresh Git | Needs the demo repo pushed to GitHub (see the repo README), then **Refresh Git** on a hub | The 🧾 Git section updates from GitHub |

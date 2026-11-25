@@ -6,7 +6,7 @@ cssclasses:
 ---
 # Cloud Platform Operations: Tasks
 
-> [!info] Full task history. **Reading view hides completed tasks**; switch to Editing view (Ctrl/Cmd+E) to see everything.
+> [!info] Full task history. **Reading view hides completed and cancelled tasks**: open **📜 History** at the bottom to see them (or Ctrl/Cmd+E).
 > Open tasks from here *and* from meeting notes are rolled up on [[Cloud Platform Operations]].
 
 ## Recurring
@@ -20,3 +20,13 @@ cssclasses:
 
 ## Tasks
 - [ ] 
+
+## 📜 History
+> [!example]- ✅ Done and ❌ cancelled tasks (click to show / hide)
+> ```tasks
+> (status.type is DONE) OR (status.type is CANCELLED)
+> path includes {{query.file.folder}}
+> group by status.name
+> sort by done reverse
+> short mode
+> ```

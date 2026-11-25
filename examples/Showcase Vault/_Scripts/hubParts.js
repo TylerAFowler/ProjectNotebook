@@ -11,6 +11,9 @@ function hubParts({ name, cats, kind, faq, deliverables = false }) {
     `started: ${today}`, "---",
     `# ${name}`,
     ...(faq ? [`❓ [[${name} - FAQ|FAQ]]`] : []),
+    "```actions",
+    kind === "operations" ? "quick-capture new-meeting new-issue new-runbook refresh-git" : "quick-capture new-meeting new-issue new-note new-requirement refresh-git",
+    "```",
   ].join("\n");
 
   const waiting = `## ⏳ Waiting on
@@ -129,7 +132,7 @@ views:
 ${F}`;
 
   const runbooks = `## 📘 Runbooks
-*How to do each routine job. Ctrl+P → Templater: Create _Templates/Runbook.md*
+*How to do each routine job. New: the **Runbook** button above (or Ctrl+P → Project Notes: New runbook).*
 ${F}base
 filters:
   and:
@@ -180,13 +183,13 @@ views:
 ${F}`;
 
   const git = `## 🧾 Git
-*Add repo URL(s) to the \`repo\` property (use a /tree/<branch>/<folder> URL to limit to a folder), then
-Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with \`🌿 branch-name\` in the task.*
+*Add repo URL(s) to the \`repo\` property (use a \`/tree/branch/folder\` URL to limit to a folder), then
+press **Refresh Git** above. Link a task to a branch with \`🌿 branch-name\` in the task.*
 <!-- git:start -->
 <!-- git:end -->`;
 
   const requirements = `## 📐 Requirements
-*New: Ctrl+P → \`Templater: Create _Templates/Requirement.md\`. Changed: \`Templater: Insert _Templates/Change Requirement.md\`
+*New: the **Requirement** button above. Changed: open the requirement (or the meeting where it changed) and press **Change requirement**
 (run it from the meeting where it changed to link the meeting + attendees). Each requirement keeps its own version history.*
 ${F}base
 filters:

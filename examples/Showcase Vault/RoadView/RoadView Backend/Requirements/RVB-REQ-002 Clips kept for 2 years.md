@@ -15,6 +15,9 @@ people:
   - '[[Tom Becker]]'
 ---
 # RVB-REQ-002: Clips kept for 2 years
+```actions
+change-requirement
+```
 **Project:** [[RoadView Backend]] · **Added:** 2026-11-09 in [[2026-11-09 Upload reliability review]] · **From:** [[Rita Gomez]]
 
 ## Current requirement
@@ -27,7 +30,7 @@ Clips are deleted 2 years after recording unless they are on legal hold. Every d
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

@@ -3,6 +3,9 @@ type: category
 created: 2026-11-24
 ---
 # Cloud Platform
+```actions
+new-project new-operations
+```
 
 ## ⚙️ Operations (ongoing work)
 ```base

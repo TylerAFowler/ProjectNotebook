@@ -2,8 +2,11 @@
 type: index
 ---
 # 📚 Knowledge Base
+```actions
+new-write-up new-runbook log-friction
+```
 Your own runbooks and write-ups that are useful **across** projects (procedures, setup guides, policies, how systems work).
-- New: Ctrl+P → `Templater: Create _Templates/Write-up.md`, or `Runbook.md` → pick **📚 Knowledge Base**.
+- New: the **Write-up** or **Runbook** button above (for a runbook, pick **📚 Knowledge Base**).
 - Set `related` on a note to show it on those project/category hubs (under **📚 Related knowledge**).
 - Pointers to external docs/URLs live in [[General Docs & Links]].
 

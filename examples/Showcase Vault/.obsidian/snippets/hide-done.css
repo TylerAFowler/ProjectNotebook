@@ -1,7 +1,6 @@
 /* Notes with `cssclasses: [hide-done]` hide completed/cancelled tasks in Reading view.
-   Switch to Editing view (Ctrl/Cmd+E) to see the full history. */
-.hide-done.markdown-preview-view li.task-list-item[data-task="x"],
-.hide-done.markdown-preview-view li.task-list-item[data-task="X"],
-.hide-done.markdown-preview-view li.task-list-item[data-task="-"] {
+   Their full history is in the note's "📜 History" box (click to expand), or switch to Editing view (Ctrl/Cmd+E).
+   Tasks shown by a ```tasks query (e.g. the History box) are never hidden. */
+.hide-done.markdown-preview-view li.task-list-item:is([data-task="x"], [data-task="X"], [data-task="-"]):not(.plugin-tasks-list-item):not(.block-language-tasks li) {
   display: none;
 }

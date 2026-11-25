@@ -1,0 +1,13 @@
+{
+  "project-notes:quick-capture": [{ "modifiers": ["Alt"], "key": "Q" }],
+  "project-notes:actions-menu": [{ "modifiers": ["Alt"], "key": "A" }],
+  "project-notes:new-meeting": [{ "modifiers": ["Alt"], "key": "M" }],
+  "project-notes:new-issue": [{ "modifiers": ["Alt"], "key": "I" }],
+  "project-notes:new-note": [{ "modifiers": ["Alt"], "key": "N" }],
+  "project-notes:open-today": [{ "modifiers": ["Alt"], "key": "D" }],
+  "project-notes:open-home": [{ "modifiers": ["Alt"], "key": "H" }],
+  "project-notes:weekly-review": [{ "modifiers": ["Alt"], "key": "W" }],
+  "project-notes:refresh-git": [{ "modifiers": ["Alt"], "key": "G" }],
+  "project-notes:edit-task": [{ "modifiers": ["Alt"], "key": "T" }],
+  "project-notes:log-friction": [{ "modifiers": ["Alt"], "key": "F" }]
+}

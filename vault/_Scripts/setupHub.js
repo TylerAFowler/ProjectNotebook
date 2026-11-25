@@ -31,9 +31,10 @@ async function setupHub(tp, { self, cats, name, kind, faq }) {
   await v.create(`${dir}/${name} - Tasks.md`, [
     "---", "type: tasks", `project: "[[${name}]]"`, "cssclasses:", "  - hide-done", "---",
     `# ${name}: Tasks`, "",
-    "> [!info] Full task history. **Reading view hides completed tasks**; switch to Editing view (Ctrl/Cmd+E) to see everything.",
+    "> [!info] Full task history. **Reading view hides completed and cancelled tasks**: open **📜 History** at the bottom to see them (or Ctrl/Cmd+E).",
     `> Open tasks from here *and* from meeting notes are rolled up on [[${name}]].`, "",
-    ...taskSections
+    ...taskSections,
+    tp.user.taskHistory(),
   ].join("\n"));
   if (faq) await v.create(`${dir}/${name} - FAQ.md`, tp.user.faqNote(name));
   return dir;

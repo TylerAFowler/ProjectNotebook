@@ -345,7 +345,7 @@ const RVB = "RoadView Backend", RVF = "RoadView Frontend", RVI = "RoadView Infer
     leftOff(H, ["Paging and timestamp fixes are merged.", "Next: review `feature/map-clustering` from [[Lena Park]]."]);
     fill(T, "Tasks", `
 - [x] Show clip times in the viewer's time zone 🌿 fix/clip-timestamp-tz ➕ 2026-11-18 ✅ 2026-11-19
-- [ ] Review Lena's map clustering branch #sticky 🌿 feature/map-clustering 📅 2026-11-26 ➕ 2026-11-23`);
+- [ ] Review Lena's map clustering branch 🌿 feature/map-clustering 📅 2026-11-26 ➕ 2026-11-23`);
     await run("Meeting", [pick(RVF), "Map view demo", "2026-11-17", "15:30", "Lena Park, Rita Gomez"]);
     fill(meeting(RV, RVF, "2026-11-17", "Map view demo"), "Notes", "- Rita loved the map; wants to click a cluster and see those clips\n- Over 500 markers gets slow → clustering");
     await run("Issue", [pick(RVF), "Clip list page 2 repeats page 1", "medium", "Rita Gomez"]);
@@ -448,16 +448,13 @@ const RVB = "RoadView Backend", RVF = "RoadView Frontend", RVI = "RoadView Infer
   await run("Runbook", [pick("Knowledge Base"), "Rotate the SAML signing certificate", "yearly", "SAML / Identity", `${SSO}`]);
   fill("Knowledge Base/Runbooks/Rotate the SAML signing certificate.md", "Steps", "1. Generate the new key pair; store it in the vault as `sso-sp-signing-<env>`.\n2. Publish new SP metadata with **both** certs.\n3. After the IdP picks it up (24 h), switch signing to the new cert.\n4. Remove the old cert from the metadata a week later.");
 
-  // ======================= General Docs & Links, Sticky =======================
+  // ======================= General Docs & Links =======================
   const QG = (kind, ...a) => QC(hub(CR, LOAD), kind, pick("General Docs"), ...a);
   await QG("doc", "IT project intake form", "Start here for any new project request from a division", "https://sharepoint.example.gov/sites/it/Forms/Intake.docx", "Process");
   await QG("doc", "Oracle naming standards", "Table/column naming rules every new schema must follow", "\\\\fileserver\\IT\\Standards\\Oracle_Naming.pdf", "Oracle");
   await QG("link", "Service desk portal", "Access requests, certificates, server tickets", "https://servicedesk.example.gov", "Process");
   await QG("link", "Cloud console", "Tenancy console (read-only for most of us)", "https://cloud.example.gov/console", "Cloud");
   await QG("link", "Change advisory board calendar", "When prod changes can happen; book IdP changes 2 weeks out", "https://sharepoint.example.gov/sites/it/CAB", "Process");
-  await run("Quick Capture", ["sticky", "Submit timesheet", "2026-11-25"], { target: "scratch.md" });
-  await run("Quick Capture", ["sticky", "Book a room for the Dec 2 staging sign-off", ""], { target: "scratch.md" });
-  await run("Quick Capture", ["sticky", "Reply to Carla about the November extract", ""], { target: "scratch.md" });
 
   // ======================= Repos + Git =======================
   const REPOS = [[hub(CR, CRO), "crash-dashboard/reports"], [hub(CR, LOAD), "crash-dashboard/etl"], [hub(CR, DASH), "crash-dashboard/app"],

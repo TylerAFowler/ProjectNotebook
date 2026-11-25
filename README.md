@@ -13,16 +13,18 @@ and a weekly review that collects everything you did.
 | `tools/make-demo-code.py` | Rebuilds the demo git history. |
 | `tests/` | Runs every template against a mock of Obsidian (`npm test`). GitHub Actions runs it on each push. |
 
-Needs Obsidian 1.9+ (Bases) and the community plugins **Templater**, **Tasks** and **Homepage**.
+Needs a recent Obsidian (1.13+). The plugins it uses ship with the vault, pre-configured: **Project Notes** (this repo's
+own: commands, buttons, ☰ menu), **Templater** (AGPL-3.0), **Tasks** (MIT) and **Homepage** (MIT); their licenses are in each
+plugin's folder under `vault/.obsidian/plugins/`.
 
 ## Start a new vault
 1. Copy the `vault` folder to where your vault should live (e.g. `G:\My Drive\ObsidianVault`).
 2. Obsidian → **Open folder as vault** → pick that folder.
-3. Follow the **README** inside the vault (turn on the plugins, CSS snippets and hotkeys).
+3. Choose **Trust author and enable plugins** when asked. That's it; the vault's README has the details.
 
 ## See the showcase
-Open `examples/Showcase Vault` as a separate vault (Obsidian → *Open folder as vault*), turn on the community
-plugins when asked, and open **▶ Start here**.
+Copy `examples/Showcase Vault` somewhere outside the repo, open it as a separate vault (Obsidian → *Open folder as vault*),
+choose **Trust author and enable plugins**, and open **▶ Start here**. The **Tutorials** folder walks you through using it.
 
 Optional, so that **Refresh Git** works live in the showcase: push the demo history to an empty GitHub repo
 named `ObsidianNotesDemo` (no README):
@@ -42,9 +44,11 @@ cd <where you cloned this repo>
 | Kind | Examples | On update |
 | ---- | -------- | --------- |
 | Framework | `_Templates/`, `_Scripts/`, CSS snippets, `00 Home.md`, `README.md`, `Knowledge Base.md` | Replaced when different (old copy backed up to `%LOCALAPPDATA%\ObsidianNotesTemplate\backup`) |
-| Starter | `📌 Sticky.md`, `General Docs & Links.md`, `Git Activity.md`, `Commands and hotkeys.md` | Added only if missing |
+| Starter | `General Docs & Links.md`, `Git Activity.md`, `Commands and hotkeys.md` | Added only if missing |
 | Your notes | categories, projects, People, Daily, Weekly, Knowledge Base notes | Never touched |
-| Settings | plugins list, CSS snippets, Templater command list | Only missing entries are added; hotkeys and theme untouched |
+| Plugins | Project Notes / Templater / Tasks / Homepage | Missing ones installed; **Project Notes always updated**; your existing Templater/Tasks/Homepage untouched (update them in Obsidian) |
+| Settings | plugins list, CSS snippets, property types | Only missing entries are added; theme untouched |
+| Hotkeys | `tools/recommended-hotkeys.json` | Only with `-InstallHotkeys`; never replaces a key you've set |
 
 Run it on one computer. Google Drive (or whatever syncs the vault) carries the changes to the others.
 Keep the clone of this repo **outside** the synced folder. Templates you add yourself in `_Templates` are kept,

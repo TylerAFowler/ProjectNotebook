@@ -21,6 +21,8 @@ test("git: hub, enterprise path, daily note, weekly review, Git Activity, bad to
   return out;
 });
 test("multi-category projects and category hubs", () => node("multicat.js", fresh("multicat")));
+test("Project Notes plugin (commands, buttons, settings files)", () => { const o = node("plugin.js"); if (!o.includes("PLUGIN OK")) throw new Error(o); return o; });
+test("Upgrade Vault repairs old notes and is idempotent", () => { const o = node("upgrade.js", fresh("upgrade")); if (!o.includes("UPGRADE OK")) throw new Error(o); return o; });
 test("showcase vault (demo repo + every template)", () => {
   const demo = path.join(tmp, "demo"); fs.mkdirSync(demo);
   execFileSync("python3", [path.resolve(__dirname, "../tools/make-demo-code.py"), demo], { stdio: "ignore" });

@@ -1,0 +1,23 @@
+{
+  "types": {
+    "date": "date",
+    "found": "date",
+    "fixed": "date",
+    "started": "date",
+    "created": "date",
+    "last_reviewed": "date",
+    "last_run": "date",
+    "added": "date",
+    "last_changed": "date",
+    "week_start": "date",
+    "week_end": "date",
+    "category": "multitext",
+    "repo": "multitext",
+    "attendees": "multitext",
+    "notify": "multitext",
+    "related": "multitext",
+    "meetings": "multitext",
+    "people": "multitext",
+    "version": "number"
+  }
+}

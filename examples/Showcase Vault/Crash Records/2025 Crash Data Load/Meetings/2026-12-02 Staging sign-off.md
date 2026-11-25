@@ -8,6 +8,9 @@ attendees:
   - "[[Dana Whitfield]]"
 ---
 # Staging sign-off
+```actions
+quick-capture new-requirement change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Date:** 2026-12-02 10:00
 
 ## Prep / questions to ask
@@ -26,7 +29,7 @@ attendees:
 - 
 
 ## 📐 Requirements discussed
-*New requirement: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed one: `Templater: Insert _Templates/Change Requirement.md`. Run either from this note and it's linked here automatically.*
+*New requirement / changed one: the buttons at the top. Run either from this note and it's linked here automatically.*
 ```base
 filters:
   and:

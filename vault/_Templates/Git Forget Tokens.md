@@ -1,5 +1,5 @@
 <%*
-// Run with "Templater: Insert _Templates/Git Forget Tokens.md" to clear stored GitHub tokens on this computer
+// Run with "Project Notes: Forget saved Git tokens" to clear stored GitHub tokens on this computer
 // (e.g. a token expired, or you want to switch accounts). You'll be asked for a new one next refresh.
 try {
 new tp.obsidian.Notice(await tp.user.git(tp, "forget"), 8000);

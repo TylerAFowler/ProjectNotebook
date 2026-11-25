@@ -1,5 +1,8 @@
 # 🏠 Home
-📚 [[Knowledge Base]]: your runbooks & write-ups · 🔗 [[General Docs & Links]]: pointers to external docs & URLs · 🧾 [[Git Activity]]: all commits, last 7 days · 📌 [[📌 Sticky|Sticky]]: pop it out (right-click tab → Open in new window) · ⌨️ [[Commands and hotkeys]]
+```actions
+quick-capture new-meeting new-issue new-project open-today weekly-review open-help
+```
+📚 [[Knowledge Base]]: your runbooks & write-ups · 🔗 [[General Docs & Links]]: pointers to external docs & URLs · 🧾 [[Git Activity]]: all commits, last 7 days · ⌨️ [[Commands and hotkeys]]
 
 ## 🧭 Active projects: where I left off
 ```base

@@ -12,6 +12,9 @@ people:
   - "[[Marcus Bell]]"
 ---
 # CDL-REQ-004: 2025 data on the public dashboard by Jan 15
+```actions
+change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Added:** 2026-11-24 · **From:** [[Marcus Bell]]
 
 ## Current requirement
@@ -24,7 +27,7 @@ Validated 2025 crash data is visible on the public dashboard by 2027-01-15.
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

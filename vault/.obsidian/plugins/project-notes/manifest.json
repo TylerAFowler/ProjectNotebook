@@ -1,0 +1,9 @@
+{
+  "id": "project-notes",
+  "name": "Project Notes",
+  "version": "1.0.0",
+  "minAppVersion": "1.9.0",
+  "description": "Clean commands, an actions menu and on-page buttons for the Obsidian Notes Template vault. Runs the vault's Templater templates.",
+  "author": "ObsidianNotesTemplate",
+  "isDesktopOnly": false
+}

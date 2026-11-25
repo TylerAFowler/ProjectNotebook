@@ -10,6 +10,9 @@ next_action: Review Lena's map clustering branch
 started: 2026-11-24
 ---
 # RoadView Frontend
+```actions
+quick-capture new-meeting new-issue new-note new-requirement refresh-git
+```
 
 > [!tip] 🧭 Where I left off
 > *Update this every time you switch away.*
@@ -38,7 +41,7 @@ short mode
 ```
 
 ## 📐 Requirements
-*New: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed: `Templater: Insert _Templates/Change Requirement.md`
+*New: the **Requirement** button above. Changed: open the requirement (or the meeting where it changed) and press **Change requirement**
 (run it from the meeting where it changed to link the meeting + attendees). Each requirement keeps its own version history.*
 ```base
 filters:
@@ -92,8 +95,8 @@ views:
 ```
 
 ## 🧾 Git
-*Add repo URL(s) to the `repo` property (use a /tree/<branch>/<folder> URL to limit to a folder), then
-Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with `🌿 branch-name` in the task.*
+*Add repo URL(s) to the `repo` property (use a `/tree/branch/folder` URL to limit to a folder), then
+press **Refresh Git** above. Link a task to a branch with `🌿 branch-name` in the task.*
 <!-- git:start -->
 *Refreshed 2026-11-24 16:00*
 
@@ -103,10 +106,10 @@ Ctrl+P → Templater: Insert Refresh Git. Link a task to a branch with `🌿 bra
 
 | Task | Branch | vs default | Last commit | PR |
 | ---- | ------ | ---------- | ----------- | -- |
-| Review Lena's map clustering branch #sticky | [feature/map-clustering](https://github.com/TylerAFowler/ObsidianNotesDemo/tree/feature/map-clustering) | 3 ahead · 5 behind | 11-23 frontend: click a cluster to filter the clip list |  |
+| Review Lena's map clustering branch | [feature/map-clustering](https://github.com/TylerAFowler/ObsidianNotesDemo/tree/feature/map-clustering) | 3 ahead · 5 behind | 11-23 frontend: click a cluster to filter the clip list |  |
 
 **Commits on task branches** (not yet in default)
-- **Review Lena's map clustering branch #sticky** (`feature/map-clustering`)
+- **Review Lena's map clustering branch** (`feature/map-clustering`)
     - 11-23 [`b1794cb`](https://github.com/TylerAFowler/ObsidianNotesDemo/commit/b1794cbbe8cbd0d5c7b0be5de11e9fcca083016e) frontend: click a cluster to filter the clip list
     - 11-19 [`26f472e`](https://github.com/TylerAFowler/ObsidianNotesDemo/commit/26f472e043eb699ecf207196a2a57000d332d131) frontend: cluster markers above 500 points
     - 11-17 [`283858b`](https://github.com/TylerAFowler/ObsidianNotesDemo/commit/283858b2527c6259033990c6de86d7be005d1483) frontend: map view of clip locations

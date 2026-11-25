@@ -14,6 +14,9 @@ people:
   - "[[Jordan Ellis]]"
 ---
 # SSO-REQ-001: MFA enforced at the IdP
+```actions
+change-requirement
+```
 **Project:** [[SSO Migration]] · **Added:** 2026-11-16 in [[2026-11-16 SSO kickoff]] · **From:** [[Tom Becker]], [[Jordan Ellis]]
 
 ## Current requirement
@@ -26,7 +29,7 @@ Every login goes through the agency IdP with MFA; the app keeps no passwords.
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

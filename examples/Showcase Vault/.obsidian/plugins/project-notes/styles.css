@@ -1,0 +1,6 @@
+/* Buttons drawn by ```actions blocks */
+.pn-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 10px; }
+.pn-actions .pn-action { display: inline-flex; align-items: center; gap: 6px; font-size: var(--font-ui-small); padding: 4px 10px; height: auto; cursor: pointer; }
+.pn-actions .pn-action-icon { display: inline-flex; }
+.pn-actions .pn-action-icon svg { width: 14px; height: 14px; }
+.pn-actions-unknown { color: var(--text-error); font-size: var(--font-ui-smaller); }

@@ -1,0 +1,16 @@
+{
+  "setCreatedDate": true,
+  "setDoneDate": true,
+  "setCancelledDate": true,
+  "autoSuggestInEditor": true,
+  "statusSettings": {
+    "coreStatuses": [
+      { "symbol": " ", "name": "Todo", "nextStatusSymbol": "/", "availableAsCommand": true, "type": "TODO" },
+      { "symbol": "x", "name": "Done", "nextStatusSymbol": " ", "availableAsCommand": true, "type": "DONE" }
+    ],
+    "customStatuses": [
+      { "symbol": "/", "name": "In Progress", "nextStatusSymbol": "x", "availableAsCommand": true, "type": "IN_PROGRESS" },
+      { "symbol": "-", "name": "Cancelled", "nextStatusSymbol": " ", "availableAsCommand": true, "type": "CANCELLED" }
+    ]
+  }
+}

@@ -10,31 +10,57 @@ last_reviewed: 2026-11-24
 **📚 Knowledge Base** · procedure · *How to drive this vault from the keyboard.*
 
 > [!summary] TL;DR
-> Everything below is a command in the palette (**Ctrl/Cmd+P**, then type a few letters). To bind a key:
-> **Settings → Hotkeys**, search the command, click ⊕, press the keys. Then write it in the **My hotkey**
-> column so you remember it.
-> *Insert* templates add to the right note without leaving the one you're in; *Create* templates make a new note.
+> - **Buttons** at the top of Home, hubs, meetings and requirements do the common things. No shortcuts needed.
+> - **All actions:** the ☰ icon in the left ribbon, or **Ctrl/Cmd+P** and type `project notes` (or just `meeting`, `issue`…).
+> - **Hotkeys are optional.** The repo's update script can install the *preset* keys below
+>   (`tools\update.ps1 -InstallHotkeys`; it never overwrites a key you've set). Or bind your own:
+>   **Settings → Hotkeys**, search the command, click ⊕, press the keys, and note it in **My hotkey**.
 
-## This vault's commands (Templater)
-*If a "Templater: Create/Insert …" command is missing: Settings → Templater → Template hotkeys → add the template.*
+## This vault's commands (Project Notes plugin)
+| What | Command (Ctrl+P → type a few letters) | What it does | Preset key | My hotkey |
+| ---- | ---- | ---- | ---- | ---- |
+| Quick capture | Project Notes: Quick capture | Task, request, waiting-on, decision, gotcha, command, FAQ, doc, link or deliverable, written into the right project | Alt+Q | |
+| Show all actions | Project Notes: Show all actions | Menu of everything below (also the ☰ icon in the left ribbon) | Alt+A | |
+| New meeting | Project Notes: New meeting | Meeting note (past or future) in a project's Meetings folder | Alt+M | |
+| New issue | Project Notes: New issue | Known issue with severity and people to notify | Alt+I | |
+| New note | Project Notes: New note | Free-form note inside a project | Alt+N | |
+| Edit task under cursor | Project Notes: Edit task under cursor | Form to change a task's status, dates, priority (Editing view; in task lists use the ✏️ pencil) | Alt+T | |
+| Log friction | Project Notes: Log friction | One line about something that got in your way → Friction log | Alt+F | |
+| Open today's daily note | Project Notes: Open today's daily note | Daily log, commits, done/due today | Alt+D | |
+| Open Home | Project Notes: Open Home | The dashboard | Alt+H | |
+| Weekly review | Project Notes: Weekly review | Everything from a week to pick from for the division report | Alt+W | |
+| Refresh Git | Project Notes: Refresh Git | Updates the 🧾 Git section of the hub, daily note or Git Activity page you're on | Alt+G | |
+| New requirement | Project Notes: New requirement | Requirement with ID and version history (run from a meeting to link it) |  | |
+| Change requirement | Project Notes: Change requirement | New version of a requirement: what changed, why, which meeting, who |  | |
+| New person | Project Notes: New person | Person note: their meetings, what they're waiting on, their issues |  | |
+| New runbook | Project Notes: New runbook | Step-by-step for a routine job (area or Knowledge Base) |  | |
+| New write-up | Project Notes: New write-up | Knowledge Base article: setup, how it works, policy, retrospective |  | |
+| New project | Project Notes: New project | Project folder, hub, tasks note, optional FAQ |  | |
+| New operations area | Project Notes: New operations area | Ongoing area: recurring jobs, requests, runbooks |  | |
+| New category | Project Notes: New category | Category hub listing its operations and projects |  | |
+| Open Git Activity / Knowledge Base / Docs & Links / this help | Project Notes: Open … | Jump to those pages |  | |
+| Upgrade vault | Project Notes: Upgrade vault | Repairs notes made by older versions; run after each update (safe to repeat) |  | |
+| Forget saved Git tokens | Project Notes: Forget saved Git tokens | Removes saved GitHub tokens from this computer |  | |
 
-| What | Command (Ctrl+P) | What it does | Suggested | My hotkey |
-| ---- | ---------------- | ------------ | --------- | --------- |
-| Quick Capture | Templater: Insert `_Templates/Quick Capture.md` | Task, request, waiting-on, decision, gotcha, command, FAQ, doc, link, deliverable or 📌 sticky to-do, written into the right project | Ctrl+Shift+T | |
-| New meeting | Templater: Create `_Templates/Meeting.md` | Meeting note (past or future) in a project's Meetings folder | Ctrl+Shift+M | |
-| New issue | Templater: Create `_Templates/Issue.md` | Known issue with severity and people to notify | Ctrl+Shift+I | |
-| New note | Templater: Create `_Templates/Note.md` | Free-form note inside a project | | |
-| New person | Templater: Create `_Templates/Person.md` | Person note: their meetings, what they're waiting on, their issues | | |
-| Weekly review | Templater: Create `_Templates/Weekly Report.md` | Everything from a week (this, last, or any) to pick from for the division report | Ctrl+Shift+W | |
-| Refresh Git | Templater: Insert `_Templates/Refresh Git.md` | Updates the 🧾 Git section of the hub, daily note or Git Activity page you're on | Ctrl+Shift+G | |
-| New requirement | Templater: Create `_Templates/Requirement.md` | Requirement with ID and version history (run from a meeting to link it) | | |
-| Change requirement | Templater: Insert `_Templates/Change Requirement.md` | New version of a requirement: what changed, why, which meeting, who | | |
-| New runbook | Templater: Create `_Templates/Runbook.md` | Step-by-step for a routine job (area or Knowledge Base) | | |
-| New write-up | Templater: Create `_Templates/Write-up.md` | Knowledge Base article: setup, how it works, policy, retrospective | | |
-| New project | Templater: Create `_Templates/New Project.md` | Project folder, hub, tasks note, optional FAQ | | |
-| New operations hub | Templater: Create `_Templates/New Operations.md` | Ongoing area: recurring jobs, requests, runbooks | | |
-| New category | Templater: Create `_Templates/Category Hub.md` | Category hub listing its operations and projects | | |
-| Forget Git tokens | Templater: Insert `_Templates/Git Forget Tokens.md` | Removes saved GitHub tokens from this computer | | |
+*Buttons: put a code block like this in any note to get buttons for those actions:*
+````
+```actions
+quick-capture new-meeting new-issue refresh-git
+```
+````
+*Action names: `quick-capture` `new-meeting` `new-issue` `new-note` `new-requirement` `change-requirement` `new-person`
+`new-runbook` `new-write-up` `new-project` `new-operations` `new-category` `weekly-review` `refresh-git` `edit-task`
+`log-friction` `open-home` `open-today` `open-git-activity` `open-knowledge-base` `open-docs-links` `open-help`
+`upgrade-vault` `forget-git-tokens`.*
+
+## Changing a task's status
+| You want to… | In Reading view (and task lists) | In Editing view |
+| --- | --- | --- |
+| Start / finish a task | Click the box: to do → in progress (◐) → done (✓) → to do | Same |
+| Cancel a task | ✏️ pencil next to the task in any task list → **Status: Cancelled** | Cursor on the task → **Edit task** (Alt+T) → Status |
+| Reopen a done/cancelled task | 📜 History box on the Tasks note → ✏️ pencil → Status: Todo | Edit task, or change `[x]`/`[-]` to `[ ]` |
+| Change due date, priority… | ✏️ pencil | Edit task |
+*The form and clicks add the ✅ done / ❌ cancelled date for you. Typing `[x]` or `[-]` by hand doesn't.*
 
 ## Obsidian & plugin commands worth a key
 | What | Command (Ctrl+P) | Default key | My hotkey |
@@ -46,15 +72,13 @@ last_reviewed: 2026-11-24
 | Back / forward | Navigate back / forward | Ctrl+Alt+← / → | |
 | Tick a checkbox | Toggle checkbox status | Ctrl+Enter | |
 | Task with a date picker | Tasks: Create or edit task | | |
-| Pop the current note out (e.g. 📌 Sticky) | Open current tab in new window | | |
-| Keep sticky window on top (PowerToys, Windows) | *outside Obsidian* | Win+Ctrl+T | |
 | Command palette | Command palette: Open command palette | Ctrl+P | |
 | Go to Home | *(Homepage plugin)* Homepage: Open homepage | | |
 
 ## Markers cheat sheet
 | Write | Means |
 | ----- | ----- |
-| `[ ]` `[/]` `[x]` `[-]` | to do · in progress · done · cancelled |
+| `[ ]` `[/]` `[x]` `[-]` | to do · in progress (half box) · done (✓) · cancelled (✗, faded). Needs the `task-status` CSS snippet |
 | `📅 2026-12-05` | due date |
 | `⏳ 2026-12-01` | scheduled (when you plan to work on it) |
 | `🎯 FY2027 Q2` or `🎯 2026-12-11` | estimated completion (weekly review shows it) |
@@ -62,7 +86,21 @@ last_reviewed: 2026-11-24
 | `🌿 feature/branch` | the Git branch for this task |
 | `🔁 every month on the 1st` | recurring |
 | `⏫` `🔼` `🔽` | high · medium · low priority |
-| `#request` `#waiting` `#sticky` | someone asked · waiting on someone · show on 📌 Sticky |
+| `#request` `#waiting` | someone asked · waiting on someone |
+
+## Typing the symbols
+You rarely need to type them yourself:
+- **Quick Capture** asks questions and writes every marker for you (📅 🎯 👤 🌿 🔁 priority).
+- **Tasks: Create or edit task** (Ctrl+P; worth a hotkey): a form with date pickers, priority, recurrence and status.
+  Run it with the cursor on an existing task to edit it.
+- **Tasks auto-suggest**: while typing a task line, type `due`, `scheduled`, `every`, `high`… and pick from the menu
+  (e.g. `due tomorrow` → `📅 2026-11-26`). Settings → Tasks → *Auto-suggest* must be on.
+- **Windows emoji picker** for the rest: **Win + .** then search `target` (🎯), `bust` (👤), `herb` (🌿).
+- Or copy one from this table.
+
+Only add the markers you need. A plain `- [ ] Call Priya` is fine; each marker exists because something reads it:
+📅 → due/overdue lists · 🎯 → weekly review's estimated completion · 👤 → the person's page, Home and "Let people know" ·
+🌿 → the hub's Git section.
 
 ## My notes
 - 

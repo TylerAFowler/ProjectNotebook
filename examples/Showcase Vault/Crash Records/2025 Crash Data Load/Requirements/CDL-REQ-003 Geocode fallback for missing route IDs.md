@@ -15,6 +15,9 @@ people:
   - '[[Marcus Bell]]'
 ---
 # CDL-REQ-003: Geocode fallback for missing route IDs
+```actions
+change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Added:** 2026-11-04 in [[2026-11-04 2025 load kickoff]] · **From:** [[Kevin O'Hara]]
 
 ## Current requirement
@@ -28,7 +31,7 @@ When the route ID is missing, locate the crash from county + milepost and flag i
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

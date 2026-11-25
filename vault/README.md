@@ -6,36 +6,26 @@ a daily work log and a one-click **"What did I do this week?"** report.
 
 ---
 
-## 1. Setup (about 10 minutes)
+## 1. Setup (about 5 minutes)
 
-1. Copy this whole `ObsidianVault` folder to your PC (put it where your sync tool will pick it up; see §5).
+1. Copy this whole vault folder to your PC (put it where your sync tool will pick it up; see §5).
 2. Install Obsidian (https://obsidian.md) → **Open folder as vault** → pick this folder.
-3. **Settings → Community plugins → Turn on community plugins**, then **Browse** and install + enable:
-   - **Templater**: runs the templates and scripts (already configured: `_Templates`, `_Scripts`)
-   - **Tasks**: due dates, priorities, done dates and the task queries
-   - **Homepage** *(optional)*: Settings → Homepage → set it to `00 Home`
-4. Check **Settings → Core plugins** has **Bases** and **Daily notes** turned on (they're on by default).
+3. When Obsidian asks about **Restricted mode**, choose **Trust author and enable plugins**. (If you missed it:
+   Settings → Community plugins → **Turn on community plugins**.) The plugins come with the vault, already set up:
+   - **Project Notes**: this vault's own plugin: the buttons, the ☰ actions menu and the `Project Notes: …` commands
+   - **Templater**: runs the templates and scripts behind those buttons
+   - **Tasks**: due dates, statuses (click a box: to do → in progress → done), the task lists
+   - **Homepage**: opens **00 Home** when Obsidian starts
+   Update them later as usual: Settings → Community plugins → **Check for updates**.
+4. **Settings → Core plugins**: **Bases** and **Daily notes** should be on (they are by default).
    Daily notes is pre-set to folder `Daily`, format `YYYY-MM-DD`, template `_Templates/Daily Note`.
-5. **Settings → Appearance → CSS snippets**: make sure `hide-done` is on.
-6. **Settings → Hotkeys** and search "Templater". Suggested bindings:
-
-   | Action | Command | Suggested key |
-   |---|---|---|
-   | Quick Capture | Templater: Insert `_Templates/Quick Capture.md` | Ctrl+Shift+T |
-   | New meeting | Templater: Create `_Templates/Meeting.md` | Ctrl+Shift+M |
-   | New issue | Templater: Create `_Templates/Issue.md` | Ctrl+Shift+I (replaces the developer-tools shortcut) |
-   | Today's daily note | Daily notes: Open today's daily note | Ctrl+Shift+D |
-   | Weekly report | Templater: Create `_Templates/Weekly Report.md` | Ctrl+Shift+W |
-   | Refresh Git (hub or daily note) | Templater: Insert `_Templates/Refresh Git.md` | Ctrl+Shift+G |
-   | New requirement / change one | Templater: Create `_Templates/Requirement.md` / Insert `Change Requirement.md` | (optional) |
-   | New runbook / write-up | Templater: Create `_Templates/Runbook.md` / `Write-up.md` | (optional) |
-   | New project / operations hub / category | Templater: Create `_Templates/New Project.md` / `New Operations.md` / `Category Hub.md` | (optional) |
-
-   *If a "Create …" command is missing, go to Templater settings → Template hotkeys and add the template.*
-   The full list of commands, with a column for the hotkeys you choose, is in **Knowledge Base → [[Commands and hotkeys]]**.
-
-7. Want to see it full of realistic data first? Open the **Showcase Vault** from the repo's `examples/` folder
-   as a separate vault (Obsidian → Open folder as vault) and start with **▶ Start here**.
+5. **Settings → Appearance → CSS snippets**: `hide-done`, `tables` and `task-status` should be on.
+6. **Hotkeys are optional**: the buttons and the ☰ menu (left ribbon) cover everything. For keys, either run the
+   repo's `tools\update.ps1 -InstallHotkeys` (adds a preset: Alt+Q Quick capture, Alt+M meeting, Alt+I issue,
+   Alt+D today, Alt+G Refresh Git… without touching keys you've set), or bind your own in Settings → Hotkeys
+   (search `project notes`). Everything is listed in **Knowledge Base → [[Commands and hotkeys]]**.
+7. New to it? Open the **Showcase Vault** from the repo's `examples/` folder as a separate vault and follow
+   **▶ Start here** and the **Tutorials**.
 
 ---
 
@@ -126,9 +116,9 @@ Set `status:` to `active`, `on-hold` or `done` in the hub's properties. Only `ac
 Each requirement is its own note in the project's `Requirements/` folder, e.g. `EP-REQ-001 County codes validated`
 (prefix = project initials; set a `req_prefix` property on the hub to choose your own).
 
-- **New:** Ctrl+P → `Templater: Create _Templates/Requirement.md` → project, title, wording, priority
+- **New:** the **Requirement** button on the hub or a meeting (or Ctrl+P → `Project Notes: New requirement`) → project, title, wording, priority
   (must / should / could / won't), status, the meeting it came from, who asked.
-- **Changed:** Ctrl+P → `Templater: Insert _Templates/Change Requirement.md`. Pick what changed (wording, status,
+- **Changed:** the **Change requirement** button on the requirement or the meeting. Pick what changed (wording, status,
   priority), why, the meeting and people. It bumps the **version**, updates the wording, and adds a row to the
   note's **Version history** table (old → new wording, status/priority changes, why, meeting, who).
 - **Run either one from inside a meeting note** and that meeting is selected first with its attendees as "who".
@@ -136,20 +126,6 @@ Each requirement is its own note in the project's `Requirements/` folder, e.g. `
 - Statuses: proposed → approved → implemented (or deferred / dropped).
 - Shows up on: the project hub (**📐 Requirements**: Active / Changed in last 30 days / All), each meeting
   (**Requirements discussed**), each person's note, and the weekly review (**📐 Requirements added / changed**).
-
----
-
-## 3c. 📌 Sticky note (always-visible to-dos)
-
-`📌 Sticky.md` (top of the vault) shows: your quick general to-dos, everything **due today / overdue**, and any
-project task tagged **`#sticky`**. Ticking a box there ticks the real task.
-- Add a general to-do: **Quick Capture → 📌 Sticky to-do** (no project needed). Pin a project task: add `#sticky` to it.
-- Keep it on screen: open it → right-click its tab → **Open in new window** → shrink the window and park it.
-  Minimize the main Obsidian window and the sticky stays.
-- Always on top of other apps: Obsidian can't do this itself; if your PC allows **Microsoft PowerToys**,
-  its *Always On Top* (**Win+Ctrl+T**) pins the sticky window.
-- Make more stickies: copy `📌 Sticky.md` (keep the `sticky` cssclass) and change its lists.
-- Style: `.obsidian/snippets/sticky.css` (turn on under Settings → Appearance → CSS snippets).
 
 ---
 
@@ -184,7 +160,7 @@ To refresh, delete the note and run it again. Daily-log bullets and ✅ dates ma
 **Link tasks to branches:** add `🌿 branch-name` to the task (Quick Capture asks for an optional branch), e.g.
 `- [ ] Add SSO login 🌿 feature/sso-login 📅 2026-12-05`
 
-**Refresh:** bind `Templater: Insert _Templates/Refresh Git.md` to **Ctrl+Shift+G**, then press it while in:
+**Refresh:** press the **Refresh Git** button (or Ctrl+P → `Project Notes: Refresh Git`, preset Alt+G) while in:
 - the **[[Git Activity]]** page → every commit on every branch of every project's repos in the last 7 days,
   grouped by project → repo → branch, plus PRs opened/merged (★ = yours).
 - a **project / operations hub** (or any note inside one) → the hub's **🧾 Git** section shows task branches
@@ -199,7 +175,7 @@ To refresh, delete the note and run it again. Daily-log bullets and ✅ dates ma
 - GitHub Enterprise Server: same place on your company's GitHub. If fine-grained tokens aren't available,
   use a classic token with the `repo` scope. You may need to be on the VPN.
 - Public repos work without a token (leave it blank), limited to 60 requests/hour.
-- Token expired or wrong? It's forgotten automatically on a 401, or run `Templater: Insert _Templates/Git Forget Tokens.md`.
+- Token expired or wrong? It's forgotten automatically on a 401, or run `Project Notes: Forget saved Git tokens`.
 
 Everything is read-only: nothing is ever written to GitHub.
 

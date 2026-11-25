@@ -15,6 +15,9 @@ people:
   - '[[Jordan Ellis]]'
 ---
 # SSO-REQ-002: Roles come from directory groups
+```actions
+change-requirement
+```
 **Project:** [[SSO Migration]] · **Added:** 2026-11-16 in [[2026-11-16 SSO kickoff]] · **From:** [[Tom Becker]]
 
 ## Current requirement
@@ -27,7 +30,7 @@ App roles are assigned from directory groups in the SAML assertion; users in no 
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

@@ -33,6 +33,9 @@ meetings:${yamlList(meeting ? [mLink] : [])}
 people:${yamlList(people)}
 ---
 # ${id}: ${title}
+\`\`\`actions
+change-requirement
+\`\`\`
 **Project:** [[${proj.basename}]] · **Added:** ${today}${mLink ? ` in ${mLink}` : ""}${people.length ? ` · **From:** ${people.join(", ")}` : ""}
 
 ## Current requirement
@@ -45,7 +48,7 @@ ${text}
 - 
 
 ## Version history
-*To record a change: Ctrl+P → \`Templater: Insert _Templates/Change Requirement.md\` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

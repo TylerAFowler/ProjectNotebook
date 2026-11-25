@@ -13,6 +13,9 @@ people:
   - "[[Kevin O'Hara]]"
 ---
 # CDL-REQ-002: Route IDs checked against LRS v2
+```actions
+change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Added:** 2026-11-04 in [[2026-11-04 2025 load kickoff]] · **From:** [[Kevin O'Hara]]
 
 ## Current requirement
@@ -25,7 +28,7 @@ Every non-null route ID must exist in LRS v2; unknown routes are reported, not d
 - 
 
 ## Version history
-*To record a change: Ctrl+P → `Templater: Insert _Templates/Change Requirement.md` (on this note, or from the meeting where it changed).*
+*To record a change: press **Change requirement** at the top (on this note, or in the meeting where it changed).*
 
 | Ver | Date | Change | Why | Meeting | Who |
 | --- | ---- | ------ | --- | ------- | --- |

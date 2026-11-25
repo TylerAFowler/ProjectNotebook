@@ -8,6 +8,9 @@ attendees:
   - "[[Jordan Ellis]]"
 ---
 # SSO kickoff
+```actions
+quick-capture new-requirement change-requirement
+```
 **Project:** [[SSO Migration]] · **Date:** 2026-11-16 13:00
 
 ## Prep / questions to ask
@@ -26,7 +29,7 @@ attendees:
 - 2026-11-16 — Crash dashboard is the first app on SAML — smallest user base, internal only
 
 ## 📐 Requirements discussed
-*New requirement: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed one: `Templater: Insert _Templates/Change Requirement.md`. Run either from this note and it's linked here automatically.*
+*New requirement / changed one: the buttons at the top. Run either from this note and it's linked here automatically.*
 ```base
 filters:
   and:

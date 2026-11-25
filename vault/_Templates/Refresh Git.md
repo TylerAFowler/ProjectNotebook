@@ -1,5 +1,5 @@
 <%*
-// Run with "Templater: Insert _Templates/Refresh Git.md" (suggested hotkey Ctrl+Shift+G) while in:
+// Run with "Project Notes: Refresh Git" (or the Refresh Git button) while in:
 //  - a project/operations hub (or any note inside a project) → refreshes its 🧾 Git section
 //  - a daily note → refreshes 🧾 Commits (your commits that day, all projects)
 // Inserts nothing at your cursor.

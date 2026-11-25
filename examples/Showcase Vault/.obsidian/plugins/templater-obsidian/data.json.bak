@@ -1,0 +1,23 @@
+{
+  "templates_folder": "_Templates",
+  "user_scripts_folder": "_Scripts",
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enabled_templates_hotkeys": [
+    "_Templates/Quick Capture.md",
+    "_Templates/New Project.md",
+    "_Templates/Meeting.md",
+    "_Templates/Issue.md",
+    "_Templates/Note.md",
+    "_Templates/Person.md",
+    "_Templates/Weekly Report.md",
+    "_Templates/New Operations.md",
+    "_Templates/Runbook.md",
+    "_Templates/Category Hub.md",
+    "_Templates/Write-up.md",
+    "_Templates/Refresh Git.md",
+    "_Templates/Git Forget Tokens.md",
+    "_Templates/Requirement.md",
+    "_Templates/Change Requirement.md"
+  ]
+}

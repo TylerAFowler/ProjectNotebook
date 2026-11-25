@@ -6,7 +6,7 @@ cssclasses:
 ---
 # Crash Records Operations: Tasks
 
-> [!info] Full task history. **Reading view hides completed tasks**; switch to Editing view (Ctrl/Cmd+E) to see everything.
+> [!info] Full task history. **Reading view hides completed and cancelled tasks**: open **📜 History** at the bottom to see them (or Ctrl/Cmd+E).
 > Open tasks from here *and* from meeting notes are rolled up on [[Crash Records Operations]].
 
 ## Recurring
@@ -25,3 +25,13 @@ cssclasses:
 ## Tasks
 - [ ] Update the FHWA extract runbook for the new vehicle body-type codes 🔽 ➕ 2026-11-20
 - [ ] #waiting Read-only crash_rpt account for the GIS team from [[Priya Natarajan]] 📅 2026-11-27 ➕ 2026-11-24
+
+## 📜 History
+> [!example]- ✅ Done and ❌ cancelled tasks (click to show / hide)
+> ```tasks
+> (status.type is DONE) OR (status.type is CANCELLED)
+> path includes {{query.file.folder}}
+> group by status.name
+> sort by done reverse
+> short mode
+> ```

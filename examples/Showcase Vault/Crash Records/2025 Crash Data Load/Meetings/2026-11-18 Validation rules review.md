@@ -9,6 +9,9 @@ attendees:
   - "[[Kevin O'Hara]]"
 ---
 # Validation rules review
+```actions
+quick-capture new-requirement change-requirement
+```
 **Project:** [[2025 Crash Data Load]] · **Date:** 2026-11-18 14:00
 
 ## Prep / questions to ask
@@ -29,7 +32,7 @@ attendees:
 - 2026-11-18 — Accept FIPS county codes and map them to state codes — rejecting 4% of 2025 is not an option
 
 ## 📐 Requirements discussed
-*New requirement: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed one: `Templater: Insert _Templates/Change Requirement.md`. Run either from this note and it's linked here automatically.*
+*New requirement / changed one: the buttons at the top. Run either from this note and it's linked here automatically.*
 ```base
 filters:
   and:

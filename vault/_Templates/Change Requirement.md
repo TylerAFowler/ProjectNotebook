@@ -2,7 +2,7 @@
 try {
 // Record a change to a requirement: bumps the version, updates wording/status/priority,
 // adds a Version history row, and links the meeting + people.
-// Run with "Templater: Insert _Templates/Change Requirement.md" while on the requirement note,
+// Run with "Project Notes: Change requirement" (or its button) while on the requirement note,
 // or while in a meeting note (that meeting is linked automatically). Inserts nothing at your cursor.
 const app = tp.app, act = tp.config.active_file;
 const fmOf = f => app.metadataCache.getFileCache(f)?.frontmatter ?? {};

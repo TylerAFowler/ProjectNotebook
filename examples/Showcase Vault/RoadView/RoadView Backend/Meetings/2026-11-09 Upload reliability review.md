@@ -9,6 +9,9 @@ attendees:
   - "[[Jordan Ellis]]"
 ---
 # Upload reliability review
+```actions
+quick-capture new-requirement change-requirement
+```
 **Project:** [[RoadView Backend]] · **Date:** 2026-11-09 11:00
 
 ## Prep / questions to ask
@@ -27,7 +30,7 @@ attendees:
 - 2026-11-09 — Chunked multipart uploads (64 MB parts) instead of raising the size limit — trucks lose signal mid-upload
 
 ## 📐 Requirements discussed
-*New requirement: Ctrl+P → `Templater: Create _Templates/Requirement.md`. Changed one: `Templater: Insert _Templates/Change Requirement.md`. Run either from this note and it's linked here automatically.*
+*New requirement / changed one: the buttons at the top. Run either from this note and it's linked here automatically.*
 ```base
 filters:
   and:

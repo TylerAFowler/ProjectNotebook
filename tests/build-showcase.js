@@ -8,6 +8,7 @@ fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, "vault"), OUT, { recursive: true, filter: s => path.basename(s) !== ".gitkeep" });
 execFileSync(process.execPath, [path.join(__dirname, "showcase.js"), OUT, path.join(tmp, "ObsidianNotesDemo")], { stdio: ["ignore", "ignore", "inherit"] });
 fs.copyFileSync(path.join(EX, "Start here (showcase tour).md"), path.join(OUT, "▶ Start here.md"));
+fs.cpSync(path.join(EX, "Tutorials"), path.join(OUT, "Tutorials"), { recursive: true });
 fs.copyFileSync(path.join(tmp, "ObsidianNotesDemo.bundle"), path.join(EX, "ObsidianNotesDemo.bundle"));
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log("Built", OUT);

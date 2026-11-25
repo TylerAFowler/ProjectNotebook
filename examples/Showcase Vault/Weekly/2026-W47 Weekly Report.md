@@ -179,7 +179,7 @@ week_end: 2026-11-22
 - Fri: reviewed Lena's paging fix
 
 **⏭️ Coming up (11/23–11/29)**
-- 📅 Review Lena's map clustering branch #sticky (`feature/map-clustering`) — Estimated Completion FY2027 Q2 (due Thu 11/26)
+- 📅 Review Lena's map clustering branch (`feature/map-clustering`) — Estimated Completion FY2027 Q2 (due Thu 11/26)
 
 ## RoadView / [[RoadView Inference]]
 
@@ -237,9 +237,6 @@ week_end: 2026-11-22
 
 **📝 Work log**
 - Wed: Half-day training: Oracle 23ai new features
-
-**⏭️ Coming up (11/23–11/29)**
-- 📅 Submit timesheet — Estimated Completion FY2027 Q2 (due Wed 11/25)
 
 
 ---

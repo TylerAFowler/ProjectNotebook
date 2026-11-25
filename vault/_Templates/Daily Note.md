@@ -3,6 +3,9 @@ type: daily
 date: <% tp.file.title %>
 ---
 # <% window.moment(tp.file.title, "YYYY-MM-DD").format("dddd, MMMM D, YYYY") %>
+```actions
+quick-capture refresh-git weekly-review
+```
 
 ## Log
 *One bullet per thing you worked on. Start with the project link so the weekly report can group it, e.g. `- [[Project X]] fixed the null-route geocoding bug`.*
