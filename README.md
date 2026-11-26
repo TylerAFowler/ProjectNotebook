@@ -1,4 +1,4 @@
-# Obsidian Notes Template
+# Project Notebook
 
 An Obsidian vault for keeping track of many projects at once: where you left off, tasks, people waiting on you,
 meetings, requirements with version history, known issues, runbooks, a knowledge base, GitHub commits per project,
@@ -43,7 +43,7 @@ cd <where you cloned this repo>
 ```
 | Kind | Examples | On update |
 | ---- | -------- | --------- |
-| Framework | `_Templates/`, `_Scripts/`, CSS snippets, `00 Home.md`, `README.md`, `Knowledge Base.md` | Replaced when different (old copy backed up to `%LOCALAPPDATA%\ObsidianNotesTemplate\backup`) |
+| Framework | `_Templates/`, `_Scripts/`, CSS snippets, `00 Home.md`, `README.md`, `Knowledge Base.md` | Replaced when different (old copy backed up to `%LOCALAPPDATA%\ProjectNotebook\backup`) |
 | Starter | `General Docs & Links.md`, `Git Activity.md`, `Commands and hotkeys.md` | Added only if missing |
 | Your notes | categories, projects, People, Daily, Weekly, Knowledge Base notes | Never touched |
 | Plugins | Project Notes / Templater / Tasks / Homepage | Missing ones installed; **Project Notes always updated**; your existing Templater/Tasks/Homepage untouched (update them in Obsidian) |

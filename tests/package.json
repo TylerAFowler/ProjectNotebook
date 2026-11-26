@@ -1,5 +1,5 @@
 {
-  "name": "obsidian-notes-template-tests",
+  "name": "project-notebook-tests",
   "description": "Runs the vault's Templater templates against a mock of Obsidian",
   "scripts": {
     "test": "node run-all.js",

@@ -44,7 +44,7 @@ if (-not $NoPull) {
 }
 
 $Stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
-$Backup = Join-Path $env:LOCALAPPDATA "ObsidianNotesTemplate\backup\$Stamp"
+$Backup = Join-Path $env:LOCALAPPDATA "ProjectNotebook\backup\$Stamp"
 $changed = New-Object System.Collections.Generic.List[string]
 
 function Copy-Framework([string]$rel) {
